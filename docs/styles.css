@@ -1,5 +1,12 @@
 :root {
-	--schedule-height: 80vh;
+	--schedule-height: 78vh;
+	--sixth: #1176A8;
+	--fifth: #2F87B3;
+	--fourth: #4D98BE;
+	--third: #6AA9C9;
+	--second: #88BBD4;
+	--first: #A6CCDE;
+	--non-class: #E1EEF4;
 	--navy-blue: hsla(239, 94%, 19%, 1);
 	--dark-cornflower-blue: hsla(214, 97%, 27%, 1);
 	--star-command-blue: hsla(201, 100%, 36%, 1);
@@ -60,6 +67,7 @@ header {
 .day {
 	width: 100%;
 	padding: 0 .5em;
+	opacity: .25;
 }
 
 .day h2 {
@@ -67,9 +75,13 @@ header {
 	padding-left: .5em;
 }
 
+.day.monday {
+	opacity: 1;
+}
+
 .period {
 	padding: .5em .75em;
-	margin-bottom: .25em;
+	margin-bottom: calc((5 / 410) * var(--schedule-height));
 	background: #eee;
 	position: relative;
 }
@@ -96,37 +108,39 @@ header {
 	bottom: .5em;
 }
 
-/*
 .period.length-20 h3, .period.length-20 h4 {
-	top: .2em;
+	top: .25em;
 }
-*/
 
 .first {
-	background: var(--sky-blue-crayola);
+	background: var(--first);
 }
 
 .second {
-	background: var(--cerulean-crayola);
+	background: var(--second);
 }
 
 .third {
-	background: var(--blue-green);
+	background: var(--third);
 }
 
 .fourth {
 	color: white;
-	background: var(--star-command-blue);
+	background: var(--fourth);
 }
 
 .fifth {
 	color: white;
-	background: var(--dark-cornflower-blue);
+	background: var(--fifth);
 }
 
 .sixth {
 	color: white;
-	background: var(--navy-blue);
+	background: var(--sixth);
+}
+
+.homeroom, .lunch, .office-hours {
+	background: var(--non-class);
 }
 
 .length-75 {
