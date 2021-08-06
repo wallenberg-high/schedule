@@ -1,5 +1,5 @@
 :root {
-	--schedule-height: 90vh;
+	--schedule-height: 80vh;
 	--navy-blue: hsla(239, 94%, 19%, 1);
 	--dark-cornflower-blue: hsla(214, 97%, 27%, 1);
 	--star-command-blue: hsla(201, 100%, 36%, 1);
@@ -15,7 +15,7 @@
 }
 
 body {
-	font-size: 16px;
+	font-size: 1.75vh;
 	padding: 0;
 	margin: 0;
 }
@@ -36,13 +36,21 @@ h1 {
 }
 
 #root {
-	height: 100vh;
-	padding: 1em 2em;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-gap: 0;
+	grid-template-rows: 8vh 1fr;
+	grid-template-areas:
+		"header"
+		"schedule";
+}
+
+header {
+	grid-area: header;
 }
 
 .schedule {
+	padding: 0 .5em;
+	grid-area: schedule;
 	display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -61,20 +69,34 @@ h1 {
 
 .period {
 	padding: .5em .75em;
-	margin-bottom: .75vh;
+	margin-bottom: .25em;
 	background: #eee;
 }
 
 .period h3 {
-	font-size: 1.35em;
+	font-size: 1.1em;
 	padding: 0;
 	margin: 0 0 .15em 0;
+	float: left;
+	display: inline-block;
 }
 
 .period h4 {
 	font-size: 1.1em;
 	padding: 0;
-	margin: 0;
+	margin: 0 0 0 .25em;
+	float: left;
+	display: inline-block;
+}
+
+.period h4::before {
+	content: '•';
+	margin-right: .25em;
+}
+
+.period.lunch h4::before, .period.office-hours h4::before, .period.homeroom h4::before {
+	content: '';
+	margin-right: 0;
 }
 
 .first {
