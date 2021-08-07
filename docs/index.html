@@ -14,6 +14,30 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
 
+	<script type="text/javascript">
+		try {
+			const day = location.hash.slice(1);
+			const style = document.createElement("style");
+
+			if (day && style) {
+				const css = `
+					.day {
+						opacity: .2;
+					}
+
+					.day.${day} {
+						opacity: 1;
+					}
+				`;
+
+				document.head.appendChild(style);
+				style.appendChild(document.createTextNode(css));
+			}
+		} catch (e) {
+			console.error(e);
+		}
+	</script>
+
 	<title>Wallenberg High School Bell Schedule</title>
 </head>
 
@@ -112,6 +136,7 @@
 					<li class="period third length-75">
 						<h3>3rd</h3>
 						<h4>8:40a</h4>
+						<h4>9:55a</h4>
 					</li>
 					<li class="period homeroom length-20">
 						<h3>🏠</h3>
@@ -120,6 +145,7 @@
 					<li class="period fourth length-75">
 						<h3>4th</h3>
 						<h4>10:25a</h4>
+						<h4>11:40a</h4>
 					</li>
 					<li class="period lunch length-35">
 						<h3>🍜</h3>
@@ -129,6 +155,7 @@
 					<li class="period fifth length-75">
 						<h3>5th</h3>
 						<h4>12:20p</h4>
+						<h4>1:35p</h4>
 					</li>
 					<li class="period office-hours length-25">
 						<h3>🏢</h3>

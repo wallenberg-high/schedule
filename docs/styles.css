@@ -1,5 +1,13 @@
 :root {
 	--schedule-height: 78vh;
+	--sixth: #09425D;
+	--fifth: #0D5C83;
+	--fourth: #1176A8;
+	--third: #6AA9C9;
+	--second: #7BB3CF;
+	--first: #B0D1E2;
+	--non-class: #E5F0F5;
+	/*
 	--sixth: #1176A8;
 	--fifth: #2F87B3;
 	--fourth: #4D98BE;
@@ -7,6 +15,7 @@
 	--second: #88BBD4;
 	--first: #A6CCDE;
 	--non-class: #E1EEF4;
+	*/
 	--navy-blue: hsla(239, 94%, 19%, 1);
 	--dark-cornflower-blue: hsla(214, 97%, 27%, 1);
 	--star-command-blue: hsla(201, 100%, 36%, 1);
@@ -67,16 +76,11 @@ header {
 .day {
 	width: 100%;
 	padding: 0 .5em;
-	opacity: .25;
 }
 
 .day h2 {
 	font-size: 1.35em;
 	padding-left: .5em;
-}
-
-.day.monday {
-	opacity: 1;
 }
 
 .period {
@@ -106,6 +110,10 @@ header {
 .period h4:nth-of-type(2) {
 	top: auto;
 	bottom: .5em;
+}
+
+.period.lunch h4:nth-of-type(2), .period.homeroom h4:nth-of-type(2) {
+	display: none;
 }
 
 .period.length-20 h3, .period.length-20 h4 {
