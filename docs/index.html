@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+	<title>Wallenberg High School Bell Schedule</title>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,31 +16,7 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
 
-	<script type="text/javascript">
-		try {
-			const day = location.hash.slice(1);
-			const style = document.createElement("style");
-
-			if (day && style) {
-				const css = `
-					.day {
-						opacity: .2;
-					}
-
-					.day.${day} {
-						opacity: 1;
-					}
-				`;
-
-				document.head.appendChild(style);
-				style.appendChild(document.createTextNode(css));
-			}
-		} catch (e) {
-			console.error(e);
-		}
-	</script>
-
-	<title>Wallenberg High School Bell Schedule</title>
+	<script type="text/javascript" src="index.js"></script>
 </head>
 
 <body>

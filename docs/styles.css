@@ -73,6 +73,11 @@ header {
 	box-sizing: border-box;
 }
 
+.schedule[class$="day"] {
+	width: 50%;
+	justify-self: center;
+}
+
 .day {
 	width: 100%;
 	padding: 0 .5em;
@@ -81,6 +86,30 @@ header {
 .day h2 {
 	font-size: 1.35em;
 	padding-left: .5em;
+}
+
+.schedule[class$="day"] .day {
+	display: none;
+}
+
+.schedule.monday .day.monday {
+	display: block;
+}
+
+.schedule.tuesday .day.tuesday {
+	display: block;
+}
+
+.schedule.wednesday .day.wednesday {
+	display: block;
+}
+
+.schedule.thursday .day.thursday {
+	display: block;
+}
+
+.schedule.friday .day.friday {
+	display: block;
 }
 
 .period {
