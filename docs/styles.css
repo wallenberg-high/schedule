@@ -136,16 +136,38 @@ header {
 	display: inline-block;
 }
 
+.schedule .period h3 {
+	font-size: 1.4em;
+	top: .3em;
+	left: .4em;
+}
+
+.schedule .period.length-20 h3 {
+	top: .1em;
+}
+
 .schedule .period:not([class~="homeroom"]):not([class~="lunch"]):not([class~="office-hours"]) h3 {
-	font-size: 3.25vmin;
+	font-size: 1.65em;
 	top: 0;
 	left: .3em;
 }
 
+.schedule[class$="day"] .period h3 {
+	font-size: 1.5em;
+	top: .3em;
+	left: .4em;
+}
+
+.schedule[class$="day"] .period.length-20 h3 {
+	font-size: 1.15em;
+	top: .3em;
+	left: .6em;
+}
+
 .schedule[class$="day"] .period:not([class~="homeroom"]):not([class~="lunch"]):not([class~="office-hours"]) h3 {
-	font-size: 6vmin;
+	font-size: 2.5em;
 	top: 0;
-	left: .2em;
+	left: .3em;
 }
 
 .period h4 {
