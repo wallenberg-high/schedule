@@ -144,6 +144,12 @@ header {
 	left: .4em;
 }
 
+.schedule .period h3.emoji {
+	font-size: 2em;
+	top: .2em;
+	left: .3em;
+}
+
 .schedule .period.length-20 h3 {
 	top: .1em;
 }
