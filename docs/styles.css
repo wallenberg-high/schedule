@@ -16,12 +16,6 @@
 	--first: #A6CCDE;
 	--non-class: #E1EEF4;
 	*/
-	--navy-blue: hsla(239, 94%, 19%, 1);
-	--dark-cornflower-blue: hsla(214, 97%, 27%, 1);
-	--star-command-blue: hsla(201, 100%, 36%, 1);
-	--blue-green: hsla(195, 100%, 39%, 1);
-	--cerulean-crayola: hsla(190, 100%, 42%, 1);
-	--sky-blue-crayola: hsla(190, 74%, 59%, 1);
 }
 
 * {
@@ -48,7 +42,13 @@ li {
 
 h1 {
 	text-align: center;
-	margin: .5em 0;
+	font-size: 6vmin;
+	margin: 0;
+}
+
+a, a:visited, a:active, a:hover {
+	color: black;
+	text-decoration: none;
 }
 
 #root {
@@ -58,6 +58,7 @@ h1 {
 	grid-template-areas:
 		"header"
 		"schedule";
+	position: relative;
 }
 
 header {
@@ -92,6 +93,12 @@ header {
 	display: none;
 }
 
+.schedule[class$="day"] .day h2 {
+	font-size: 2em;
+	padding-left: .1em;
+	margin: .25em;
+}
+
 .schedule.monday .day.monday {
 	display: block;
 }
@@ -124,9 +131,21 @@ header {
 	padding: 0;
 	margin: 0;
 	top: .5em;
-	left: .75em;
+	left: .5em;
 	position: absolute;
 	display: inline-block;
+}
+
+.schedule .period:not([class~="homeroom"]):not([class~="lunch"]):not([class~="office-hours"]) h3 {
+	font-size: 3.25vmin;
+	top: 0;
+	left: .3em;
+}
+
+.schedule[class$="day"] .period:not([class~="homeroom"]):not([class~="lunch"]):not([class~="office-hours"]) h3 {
+	font-size: 6vmin;
+	top: 0;
+	left: .2em;
 }
 
 .period h4 {
@@ -198,4 +217,40 @@ header {
 
 .length-20 {
 	height: calc((20 / 410) * var(--schedule-height));
+}
+
+.qr {
+	display: none;
+}
+
+.schedule[class$="day"] + .qr {
+	width: 20%;
+	padding-bottom: 20%;
+	right: 5%;
+	bottom: 1%;
+	background-size: 104%;
+	background-position: right top;
+	display: inline-block;
+	position: absolute;
+	grid-area: schedule;
+}
+
+.schedule.monday + .qr {
+	background-image: url("img/qr-monday.png");
+}
+
+.schedule.tuesday + .qr {
+	background-image: url("img/qr-tuesday.png");
+}
+
+.schedule.wednesday + .qr {
+	background-image: url("img/qr-wednesday.png");
+}
+
+.schedule.thursday + .qr {
+	background-image: url("img/qr-thursday.png");
+}
+
+.schedule.friday + .qr {
+	background-image: url("img/qr-friday.png");
 }
