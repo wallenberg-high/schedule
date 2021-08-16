@@ -282,7 +282,7 @@ header {
 	bottom: 1%;
 	background-size: 104%;
 	background-position: right top;
-	display: inline-block;
+	/*display: inline-block;*/
 	position: absolute;
 	grid-area: schedule;
 }
